@@ -1,0 +1,16 @@
+function [completeData] = TestHowManyPointsAreUseful(dataset)
+
+[rows,columns] = size(dataset);
+
+carrier = 1;
+for i=1:rows
+    rowToCheck = dataset(i,:);
+       
+    if isempty(rowToCheck(rowToCheck == 99)) == 1
+        
+        completeData(carrier,:) = dataset(i,:);
+        carrier = carrier + 1;
+        
+    end
+end
+end
